@@ -1,0 +1,54 @@
+algorithm,elapsed_s,f1,precision,recall,shd,fdr,tpr,fpr,nnz,n_edges_true,variant,alpha,ci_test,criterion,method,max_iter,thresh,measure,lambda1,loss_type,w_threshold,model_type,equal_variances,lambda_1,model_name,hidden_dim,error,algo_family
+PC|variant=original|alpha=0.01,0.95,0.75,0.75,0.75,,,,,8.0,8.0,original,0.01,chi2,,,,,,,,,,,,,,,PC
+PC|variant=original|alpha=0.05,0.89,0.75,0.75,0.75,,,,,8.0,8.0,original,0.05,chi2,,,,,,,,,,,,,,,PC
+PC|variant=original|alpha=0.1,1.67,0.75,0.75,0.75,,,,,8.0,8.0,original,0.1,chi2,,,,,,,,,,,,,,,PC
+PC|variant=stable|alpha=0.01,1.64,0.5714,0.6667,0.5,,,,,6.0,8.0,stable,0.01,chi2,,,,,,,,,,,,,,,PC
+PC|variant=stable|alpha=0.05,1.36,0.5714,0.6667,0.5,,,,,6.0,8.0,stable,0.05,chi2,,,,,,,,,,,,,,,PC
+PC|variant=stable|alpha=0.1,1.0,0.75,0.75,0.75,,,,,8.0,8.0,stable,0.1,chi2,,,,,,,,,,,,,,,PC
+GES|criterion=bic|method=scatter,0.81,0.8235,0.7778,0.875,,,,,9.0,8.0,,,,bic,scatter,,,,,,,,,,,,,GES
+GES|criterion=bic|method=r2,1.03,0.0833,0.0625,0.125,,,,,16.0,8.0,,,,bic,r2,,,,,,,,,,,,,GES
+GES|criterion=bdeu|method=scatter,1.15,0.2069,0.1429,0.375,,,,,21.0,8.0,,,,bdeu,scatter,,,,,,,,,,,,,GES
+GES|criterion=bdeu|method=r2,1.05,0.2069,0.1429,0.375,,,,,21.0,8.0,,,,bdeu,r2,,,,,,,,,,,,,GES
+ICALiNGAM|max_iter=500|thresh=0.1,0.09,0.25,0.25,0.25,,,,,8.0,8.0,,,,,,500.0,0.1,,,,,,,,,,,ICALiNGAM
+ICALiNGAM|max_iter=500|thresh=0.3,0.12,0.2857,0.3333,0.25,,,,,6.0,8.0,,,,,,500.0,0.3,,,,,,,,,,,ICALiNGAM
+ICALiNGAM|max_iter=500|thresh=0.5,0.12,0.3077,0.4,0.25,,,,,5.0,8.0,,,,,,500.0,0.5,,,,,,,,,,,ICALiNGAM
+ICALiNGAM|max_iter=1000|thresh=0.1,0.11,0.25,0.25,0.25,,,,,8.0,8.0,,,,,,1000.0,0.1,,,,,,,,,,,ICALiNGAM
+ICALiNGAM|max_iter=1000|thresh=0.3,0.1,0.2857,0.3333,0.25,,,,,6.0,8.0,,,,,,1000.0,0.3,,,,,,,,,,,ICALiNGAM
+ICALiNGAM|max_iter=1000|thresh=0.5,0.1,0.3077,0.4,0.25,,,,,5.0,8.0,,,,,,1000.0,0.5,,,,,,,,,,,ICALiNGAM
+DirectLiNGAM|measure=pwling,0.38,0.4,0.4286,0.375,,,,,7.0,8.0,,,,,,,,pwling,,,,,,,,,,DirectLiNGAM
+Notears|lambda1=0.01|loss=l2|thresh=0.3,7.27,0.5455,1.0,0.375,,,,,3.0,8.0,,,,,,,,,0.01,l2,0.3,,,,,,,Notears
+Notears|lambda1=0.01|loss=l2|thresh=0.5,5.62,0.5455,1.0,0.375,,,,,3.0,8.0,,,,,,,,,0.01,l2,0.5,,,,,,,Notears
+Notears|lambda1=0.01|loss=logistic|thresh=0.3,13.03,0.2308,0.1667,0.375,,,,,18.0,8.0,,,,,,,,,0.01,logistic,0.3,,,,,,,Notears
+Notears|lambda1=0.01|loss=logistic|thresh=0.5,13.46,0.2308,0.1667,0.375,,,,,18.0,8.0,,,,,,,,,0.01,logistic,0.5,,,,,,,Notears
+Notears|lambda1=0.1|loss=l2|thresh=0.3,1.24,,,0.0,,,,,0.0,8.0,,,,,,,,,0.1,l2,0.3,,,,,,,Notears
+Notears|lambda1=0.1|loss=l2|thresh=0.5,1.21,,,0.0,,,,,0.0,8.0,,,,,,,,,0.1,l2,0.5,,,,,,,Notears
+Notears|lambda1=0.1|loss=logistic|thresh=0.3,2.19,0.1053,0.0909,0.125,,,,,11.0,8.0,,,,,,,,,0.1,logistic,0.3,,,,,,,Notears
+Notears|lambda1=0.1|loss=logistic|thresh=0.5,2.2,0.1538,0.2,0.125,,,,,5.0,8.0,,,,,,,,,0.1,logistic,0.5,,,,,,,Notears
+NotearsNL|model=mlp|lambda1=0.01,20.96,0.2222,1.0,0.125,,,,,1.0,8.0,,,,,,,,,0.01,,,mlp,,,,,,NotearsNL
+NotearsNL|model=mlp|lambda1=0.1,2.29,,,0.0,,,,,0.0,8.0,,,,,,,,,0.1,,,mlp,,,,,,NotearsNL
+NotearsNL|model=sob|lambda1=0.01,26.92,0.6667,1.0,0.5,,,,,4.0,8.0,,,,,,,,,0.01,,,sob,,,,,,NotearsNL
+NotearsNL|model=sob|lambda1=0.1,2.17,,,0.0,,,,,0.0,8.0,,,,,,,,,0.1,,,sob,,,,,,NotearsNL
+GOLEM|EV|lambda1=0.02,35.95,0.3,0.25,0.375,,,,,12.0,8.0,,,,,,,,,,,,,True,0.02,,,,GOLEM
+GOLEM|EV|lambda1=0.05,35.35,0.1053,0.0909,0.125,,,,,11.0,8.0,,,,,,,,,,,,,True,0.05,,,,GOLEM
+GOLEM|NV|lambda1=0.02,36.08,0.1429,0.1667,0.125,,,,,6.0,8.0,,,,,,,,,,,,,False,0.02,,,,GOLEM
+GOLEM|NV|lambda1=0.05,34.17,0.1429,0.1667,0.125,,,,,6.0,8.0,,,,,,,,,,,,,False,0.05,,,,GOLEM
+GraNDAG|model=NonLinGaussANM|hidden=10,27.39,,0.0,0.0,,,,,2.0,8.0,,,,,,,,,,,,,,,NonLinGaussANM,10.0,,GraNDAG
+GraNDAG|model=NonLinGaussANM|hidden=20,27.44,0.2222,1.0,0.125,,,,,1.0,8.0,,,,,,,,,,,,,,,NonLinGaussANM,20.0,,GraNDAG
+GraNDAG|model=NonLinGauss|hidden=10,25.27,,0.0,0.0,,,,,2.0,8.0,,,,,,,,,,,,,,,NonLinGauss,10.0,,GraNDAG
+GraNDAG|model=NonLinGauss|hidden=20,27.42,0.1333,0.1429,0.125,,,,,7.0,8.0,,,,,,,,,,,,,,,NonLinGauss,20.0,,GraNDAG
+MCSL|model=nn|penalty=0.002,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,MCSL.__init__() got an unexpected keyword argument 'w_threshold',MCSL
+MCSL|model=nn|penalty=0.01,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,MCSL.__init__() got an unexpected keyword argument 'w_threshold',MCSL
+MCSL|model=qr|penalty=0.002,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,MCSL.__init__() got an unexpected keyword argument 'w_threshold',MCSL
+MCSL|model=qr|penalty=0.01,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,MCSL.__init__() got an unexpected keyword argument 'w_threshold',MCSL
+GAE|hidden=16|thresh=0.3,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,GAE.__init__() got an unexpected keyword argument 'rho',GAE
+GAE|hidden=16|thresh=0.5,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,GAE.__init__() got an unexpected keyword argument 'rho',GAE
+GAE|hidden=32|thresh=0.3,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,GAE.__init__() got an unexpected keyword argument 'rho',GAE
+GAE|hidden=32|thresh=0.5,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,GAE.__init__() got an unexpected keyword argument 'rho',GAE
+RL|reward=BIC|iter=100,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,RL.__init__() got an unexpected keyword argument 'input_dim',RL
+RL|reward=BIC|iter=300,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,RL.__init__() got an unexpected keyword argument 'input_dim',RL
+RL|reward=BIC_different_var|iter=100,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,RL.__init__() got an unexpected keyword argument 'input_dim',RL
+RL|reward=BIC_different_var|iter=300,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,RL.__init__() got an unexpected keyword argument 'input_dim',RL
+CORL|reward=BIC|iter=100,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,CORL.__init__() got an unexpected keyword argument 'encoder_type',CORL
+CORL|reward=BIC|iter=300,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,CORL.__init__() got an unexpected keyword argument 'encoder_type',CORL
+CORL|reward=BIC_different_var|iter=100,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,CORL.__init__() got an unexpected keyword argument 'encoder_type',CORL
+CORL|reward=BIC_different_var|iter=300,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,CORL.__init__() got an unexpected keyword argument 'encoder_type',CORL
