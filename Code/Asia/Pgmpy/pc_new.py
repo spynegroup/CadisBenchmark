@@ -14,6 +14,7 @@ import pickle
 import argparse
 import tracemalloc
 import datetime
+from zoneinfo import ZoneInfo
 from itertools import product
 
 import psutil
@@ -115,9 +116,14 @@ def main():
         print(f"[INFO] Loaded expert knowledge from: {ek_path}")
 
     # ── Data paths ──────────────────────────────────────
+    # Use __file__ so the path is always relative to this script's location,
+    # regardless of the working directory from which the script is invoked.
+    # Script lives at:  CadisBenchmark/Code/Asia/Pgmpy/pc_new.py
+    # Dataset lives at: CadisBenchmark/Assets/Asia/asia_dataset.pkl
+    _script_dir = os.path.dirname(os.path.abspath(__file__))
     asia_datafile = os.path.normpath(
         os.path.join(
-            os.getcwd(), "..", "..", "..", "Assets", "Asia", "asia_dataset.pkl"
+            _script_dir, "..", "..", "..", "Assets", "Asia", "asia_dataset.pkl"
         )
     )
 
@@ -127,10 +133,13 @@ def main():
     print(asia_data.head())
 
     # ── Output directory: CadisBenchmark/Assets/Asia/<timestamp>/ ──
-    run_timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    #     ist_now = datetime.now(ZoneInfo('Asia/Kolkata'))
+
+    # print("Current IST Time:", ist_now.strftime('%Y-%m-%d %H:%M:%S'))
+    run_timestamp = datetime.datetime.now(ZoneInfo('Asia/Kolkata')).strftime("%Y%m%d_%H%M%S")
     output_root = os.path.normpath(
         os.path.join(
-            os.getcwd(), "..", "..", "..", "Assets", "Asia", run_timestamp
+            _script_dir, "..", "..", "..", "Assets", "Asia", run_timestamp
         )
     )
     os.makedirs(output_root, exist_ok=True)
